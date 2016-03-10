@@ -9,6 +9,7 @@
     <sprite>sprites\sShip</sprite>
     <sprite>sprites\sLaser</sprite>
     <sprite>sprites\sEnemyOne</sprite>
+    <sprite>sprites\sExplosionCenter</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bStarsFar</background>
@@ -19,6 +20,8 @@
     <object>objects\oShip</object>
     <object>objects\oLaser</object>
     <object>objects\oEnemyOne</object>
+    <object>objects\oEnemySpawner</object>
+    <object>objects\oExplosionCenter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rSpace</room>
