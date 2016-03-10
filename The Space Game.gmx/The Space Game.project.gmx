@@ -5,9 +5,24 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\sShip</sprite>
+    <sprite>sprites\sLaser</sprite>
+    <sprite>sprites\sEnemyOne</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bStarsFar</background>
+    <background>background\bStarsClose</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\oShip</object>
+    <object>objects\oLaser</object>
+    <object>objects\oEnemyOne</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rSpace</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
