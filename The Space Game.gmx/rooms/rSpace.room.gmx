@@ -52,7 +52,10 @@
   </views>
   <instances>
     <instance objName="oShip" x="90" y="290" name="inst_CB1B441A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oEnemySpawner" x="9" y="8" name="inst_72C79654" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oEnemySpawner" x="45" y="40" name="inst_72C79654" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGame" x="108" y="40" name="inst_B8383FF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oArmor" x="0" y="0" name="inst_8888EFD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oScore" x="180" y="0" name="inst_C437A97F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

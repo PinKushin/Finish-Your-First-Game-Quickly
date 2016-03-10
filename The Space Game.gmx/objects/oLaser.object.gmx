@@ -33,7 +33,7 @@ vspeed = -8;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="oEnemyOne">
+    <event eventtype="4" ename="oEnemyPar">
       <action>
         <libid>1</libid>
         <id>603</id>

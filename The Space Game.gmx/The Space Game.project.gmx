@@ -10,18 +10,34 @@
     <sprite>sprites\sLaser</sprite>
     <sprite>sprites\sEnemyOne</sprite>
     <sprite>sprites\sExplosionCenter</sprite>
+    <sprite>sprites\sEnemyTwo</sprite>
+    <sprite>sprites\sEnemyLaser</sprite>
+    <sprite>sprites\sScore</sprite>
+    <sprite>sprites\sArmor</sprite>
+    <sprite>sprites\sArmorPowerup</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bStarsFar</background>
     <background>background\bStarsClose</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fScore</font>
+  </fonts>
   <objects name="objects">
     <object>objects\oShip</object>
     <object>objects\oLaser</object>
+    <object>objects\oEnemyLaser</object>
+    <object>objects\oEnemyPar</object>
     <object>objects\oEnemyOne</object>
+    <object>objects\oEnemyTwo</object>
     <object>objects\oEnemySpawner</object>
     <object>objects\oExplosionCenter</object>
+    <object>objects\oGame</object>
+    <object>objects\oScore</object>
+    <object>objects\oArmor</object>
+    <object>objects\oArmorPowerup</object>
+    <object>objects\oPowerupPar</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rSpace</room>
