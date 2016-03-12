@@ -4,42 +4,70 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\aEnemyLaser</sound>
+    <sound>sound\aExplode</sound>
+    <sound>sound\aHit</sound>
+    <sound>sound\aLaser</sound>
+    <sound>sound\aPowerup</sound>
+    <sound>sound\aShipHit</sound>
+    <sound>sound\aSpaceMusic</sound>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sShip</sprite>
-    <sprite>sprites\sLaser</sprite>
-    <sprite>sprites\sEnemyOne</sprite>
-    <sprite>sprites\sExplosionCenter</sprite>
-    <sprite>sprites\sEnemyTwo</sprite>
-    <sprite>sprites\sEnemyLaser</sprite>
-    <sprite>sprites\sScore</sprite>
     <sprite>sprites\sArmor</sprite>
     <sprite>sprites\sArmorPowerup</sprite>
+    <sprite>sprites\sButton</sprite>
+    <sprite>sprites\sEnemyLaser</sprite>
+    <sprite>sprites\sEnemyOne</sprite>
+    <sprite>sprites\sEnemyTwo</sprite>
+    <sprite>sprites\sExplosionCenter</sprite>
+    <sprite>sprites\sFlare</sprite>
+    <sprite>sprites\sLaser</sprite>
+    <sprite>sprites\sLaserPowerUp</sprite>
+    <sprite>sprites\sScore</sprite>
+    <sprite>sprites\sShip</sprite>
+    <sprite>sprites\sSmoke</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bStarsFar</background>
     <background>background\bStarsClose</background>
+    <background>background\bStarsFar</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\AddScreenShake.gml</script>
+    <script>scripts\CreatePartTypeSprite.gml</script>
+    <script>scripts\CreateExplosion.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fScore</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oShip</object>
-    <object>objects\oLaser</object>
-    <object>objects\oEnemyLaser</object>
-    <object>objects\oEnemyPar</object>
-    <object>objects\oEnemyOne</object>
-    <object>objects\oEnemyTwo</object>
-    <object>objects\oEnemySpawner</object>
-    <object>objects\oExplosionCenter</object>
-    <object>objects\oGame</object>
-    <object>objects\oScore</object>
     <object>objects\oArmor</object>
     <object>objects\oArmorPowerup</object>
+    <object>objects\oButtonPar</object>
+    <object>objects\oEnemyLaser</object>
+    <object>objects\oEnemyOne</object>
+    <object>objects\oEnemyPar</object>
+    <object>objects\oEnemySpawner</object>
+    <object>objects\oEnemyTwo</object>
+    <object>objects\oExplosionCenter</object>
+    <object>objects\oFlare</object>
+    <object>objects\oGame</object>
+    <object>objects\oHighScore</object>
+    <object>objects\oLaser</object>
+    <object>objects\oLaserPowerup</object>
+    <object>objects\oMenuButton</object>
+    <object>objects\oParticleCreator</object>
     <object>objects\oPowerupPar</object>
+    <object>objects\oQuitButton</object>
+    <object>objects\oScore</object>
+    <object>objects\oScreenFlash</object>
+    <object>objects\oShip</object>
+    <object>objects\oStartButton</object>
+    <object>objects\oViewControl</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rMenu</room>
     <room>rooms\rSpace</room>
   </rooms>
   <help>

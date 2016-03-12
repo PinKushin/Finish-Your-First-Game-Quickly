@@ -3,7 +3,7 @@
   <spriteName>sExplosionCenter</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-20</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,8 @@
             <string>///Initialie ExplosionCenter
 image_angle = random (360);
 image_alpha = 0.8;
+audio_play_sound (aExplode, 7, false)
+//AddScreenShake (8, room_speed * 0.25);
 
 </string>
           </argument>

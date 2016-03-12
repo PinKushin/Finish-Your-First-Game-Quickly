@@ -3,7 +3,7 @@
   <spriteName>sEnemyTwo</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>oEnemyPar</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,7 +28,7 @@
             <string>///Initialize the Enemy
 vspeed = 1;
 hspeed = choose (-1, 1);
-armor = 4;
+armor = 6;
 alarm[LASER] = 1;
 </string>
           </argument>
@@ -53,7 +53,7 @@ alarm[LASER] = 1;
           <argument>
             <kind>1</kind>
             <string>///Fire Enemy Laser
-instance_create (x, y + 4, oEnemyLaser);
+instance_create (x, y + 8, oEnemyLaser);
 alarm[LASER] = room_speed / 1.5;
 </string>
           </argument>

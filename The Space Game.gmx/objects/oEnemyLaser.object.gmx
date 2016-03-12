@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise Enemy Laser
-
 vspeed = 4;
+instance_create (x, y, oFlare)
+audio_play_sound (aEnemyLaser, 4, false)
 </string>
           </argument>
         </arguments>
@@ -52,10 +53,11 @@ vspeed = 4;
             <kind>1</kind>
             <string>///Hit the Player
 instance_destroy ();
-with other
-{
-    armor -= 1;
-}
+other.armor -= 1;
+instance_create (0, 0, oScreenFlash);
+instance_create (x, y, oFlare);
+audio_play_sound (aShipHit, 6, false)
+//AddScreenShake (4, room_speed * 0.125);
 </string>
           </argument>
         </arguments>

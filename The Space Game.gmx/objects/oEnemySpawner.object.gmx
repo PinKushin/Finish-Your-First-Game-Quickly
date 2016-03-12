@@ -51,8 +51,9 @@ alarm[POWERUPSPAWNER] = room_speed * 5;
           <argument>
             <kind>1</kind>
             <string>///Spawn Armor power up
-instance_create (random_range(16, room_width - 16), -16, oArmorPowerup)
-alarm[POWERUPSPAWNER] = random_range (room_speed * 10, room_speed * 15)
+var PowerUp = choose (oArmorPowerup, oLaserPowerup);
+instance_create (random_range(16, room_width - 16), -16, PowerUp);
+alarm[POWERUPSPAWNER] = random_range (room_speed * 10, room_speed * 15);
 </string>
           </argument>
         </arguments>
@@ -76,9 +77,26 @@ alarm[POWERUPSPAWNER] = random_range (room_speed * 10, room_speed * 15)
           <argument>
             <kind>1</kind>
             <string>///Create the Enemys
-var enemy = choose (oEnemyOne, oEnemyTwo);
+var enemy = oEnemyOne;
+var alarmtime = random_range (room_speed * 0.5, room_speed * 2);
+
+///Increase the Difficulty
+if score &gt;= 100
+{
+    var enemy = choose (oEnemyOne, oEnemyOne, oEnemyTwo);
+    alarmtime = random_range (room_speed * 0.25, room_speed * 1.5);
+}
+
+///Increase the Difficulty
+if score &gt;= 200
+{
+    var enemy = choose (oEnemyOne, oEnemyTwo);
+    alarmtime = random_range (room_speed * 0.25, room_speed);
+}
+
+//Create the Enemy
 instance_create (random_range (16, room_width - 16), -16, enemy);
-alarm[SPAWNER] = random_range (room_speed * 0.5, room_speed * 2); 
+alarm[SPAWNER] = alarmtime;
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>sShip</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,31 @@
             <string>///Initialise the ship
 alarm[LASER] = 1;
 armor = 4;
+LaserPowerup = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Deactivate Laser Powerup
+LaserPowerup = false;
 </string>
           </argument>
         </arguments>
@@ -50,14 +75,29 @@ armor = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_check_button (mb_left)
+            <string>///Create the Lasers
+
+if mouse_check_button (mb_left)
 {
     ///Create the Lasers
-    instance_create (x + 12, y, oLaser);
-    instance_create (x - 12, y, oLaser);
+    instance_create (x + 12, y - 8, oLaser);
+    instance_create (x - 12, y - 8, oLaser);
 }
  //Reset alarm
-    alarm[LASER] = room_speed / 6;
+alarm[LASER] = room_speed / 6;
+
+//Create the Powerup Lasers
+if LaserPowerup == true
+{
+    var laser;
+    if mouse_check_button (mb_left)
+    {
+        laser = instance_create ( x + 12, y - 8, oLaser);
+        laser.hspeed = 0.5;
+        laser = instance_create (x - 12, y - 8, oLaser);
+        laser.hspeed = -0.5;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -86,8 +126,40 @@ x = clamp (mouse_x, 16, room_width - 16);
 //Death code
 if armor &lt;= 0
 {
-    instance_create (x, y, oExplosionCenter);
+    CreateExplosion (x, y)
     instance_destroy ();
+    instance_create (room_width / 2, room_height / 2, oMenuButton);
+    AddScreenShake (4, room_speed * 0.125);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oLaserPowerup">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect Laser Powerup
+LaserPowerup = true;
+alarm[LASERPOWERUP] = room_speed * 5;
+audio_play_sound (aPowerup, 6, false)
+with other
+{
+    instance_destroy ()
 }
 </string>
           </argument>
@@ -114,6 +186,7 @@ if armor &lt;= 0
             <string>///Collect Armor Powerup
 armor += 1;
 armor = min (armor, 4);
+audio_play_sound (aPowerup, 4, false)
 with other
 {
     instance_destroy ();
